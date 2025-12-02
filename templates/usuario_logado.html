@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Bem-vindo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #34495e;
+        }
+
+        .form-button {
+            margin-top: 30px;
+            display: inline-block;
+            padding: 14px 24px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-button:hover {
+            background-color: #357ABD;
+        }
+
+        .form-button-secondary {
+            background-color: #bdc3c7;
+            color: #2c3e50;
+        }
+
+        .form-button-secondary:hover {
+            background-color: #95a5a6;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Olá, {{ usuario.nome }}!</h1>
+        <p>Você foi logado com sucesso.</p>
+
+        <a href="/cadastrar/" class="form-button form-button-secondary">Sair</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <!-- Fonte elegante -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 400px;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            color: #2c3e50;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-group i {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            color: #aaa;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 12px 12px 36px;
+            border: 1px solid #dcdde1;
+            border-radius: 8px;
+            font-size: 15px;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-group input:focus {
+            border-color: #4a90e2;
+            outline: none;
+            background-color: #ffffff;
+        }
+
+        .form-button {
+            width: 100%;
+            background-color: #4a90e2;
+            color: #fff;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .form-button:hover {
+            background-color: #357ABD;
+        }
+
+        .form-button-secondary {
+            background-color: #bdc3c7;
+            color: #2c3e50;
+        }
+
+        .form-button-secondary:hover {
+            background-color: #95a5a6;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form method="post">
+            <h1>Login</h1>
+            {% csrf_token %}
+
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="text" name="email" placeholder="Email" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="senha" placeholder="Senha" required>
+            </div>
+
+            <button type="submit" class="form-button">Entrar</button>
+
+        </form>
+    </div>
+</body>
+</html>

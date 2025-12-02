@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Usuário</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .form-group {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #34495e;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #dcdde1;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            font-size: 15px;
+            color: #2c3e50;
+            transition: border 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #4a90e2;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .form-button {
+            background-color: #4a90e2;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-button:hover {
+            background-color: #357ABD;
+        }
+
+        .form-button-secondary {
+            background-color: #bdc3c7;
+            color: #2c3e50;
+            margin-top: 10px;
+        }
+
+        .form-button-secondary:hover {
+            background-color: #95a5a6;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form method="post">
+            <h1>Cadastro de Usuário</h1>
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+                <button type="submit" class="form-button">Cadastrar</button>
+                <button type="button" class="form-button form-button-secondary" onclick="window.location.href='/login/'">Login</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
