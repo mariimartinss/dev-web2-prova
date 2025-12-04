@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Usuário</title>
+    <style>
+        body { font-family: Arial; background: #e9e9e9; padding: 20px; }
+        form {
+            background: white; padding: 20px; border-radius: 8px;
+            max-width: 400px; margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label { display: block; margin: 10px 0 5px; }
+        input { width: 100%; padding: 10px; }
+        button {
+            margin-top: 15px; padding: 10px; width: 100%;
+            background: #4CAF50; border: none; color: white; cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<form method="POST">
+    {% csrf_token %}
+    <h2>Editar Usuário</h2>
+
+    {{ form.as_p }}
+
+    <button type="submit">Salvar alterações</button>
+</form>
+
+<br>
+<a href="/painel/" style="display:block;text-align:center;">⬅ Voltar ao painel</a>
+
+</body>
+</html>

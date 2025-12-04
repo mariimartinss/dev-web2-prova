@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizar Usuário</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f4f4f4; }
+        .card {
+            background: white; padding: 20px; border-radius: 8px;
+            max-width: 400px; margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        a { display: inline-block; margin-top: 20px; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Dados do Usuário</h2>
+    <p><strong>Nome:</strong> {{ usuario.nome }}</p>
+    <p><strong>Email:</strong> {{ usuario.email }}</p>
+
+    <a href="/painel/">⬅ Voltar ao painel</a>
+</div>
+
+</body>
+</html>

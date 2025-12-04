@@ -128,6 +128,24 @@
 
             <button type="submit" class="form-button">Entrar</button>
 
+{% if messages %}
+    <div style="
+        background:#ffdddd;
+        color:#a30000;
+        border-left:4px solid #a30000;
+        padding:10px;
+        margin-bottom:15px;
+        border-radius:4px;
+        font-family:Arial;
+    ">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+
+
+
         </form>
     </div>
 </body>

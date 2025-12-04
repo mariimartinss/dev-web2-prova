@@ -23,5 +23,10 @@ urlpatterns = [
     #    path('admin/', admin.site.urls),
     path ('cadastrar/', views.cadastrar, name='cadastrar'),
     path('login/', views.login, name='login'),
+    path("painel/", views.painel, name="painel"),
+    path("editar/<int:id>/", views.editar, name="editar"),
+    path("visualizar/<int:id>/", views.visualizar, name="visualizar"),
+    path("excluir/<int:id>/", views.excluir, name="excluir"),
+
 
 ]
